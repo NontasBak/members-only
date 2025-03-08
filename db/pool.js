@@ -3,4 +3,4 @@ const dbConfig = require("./config");
 
 const pool = new Pool(dbConfig);
 
-export default pool;
+module.exports = pool;
