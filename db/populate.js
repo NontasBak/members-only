@@ -8,6 +8,7 @@ async function createTables() {
         last_name VARCHAR(255),
         email VARCHAR(255),
         password VARCHAR(255)
+        is_member BOOLEAN DEFAULT FALSE
         );
 
         CREATE TABLE IF NOT EXISTS messages (

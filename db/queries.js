@@ -13,6 +13,20 @@ async function createUser(firstName, lastName, email, password) {
     }
 }
 
+async function updateUserMembership(email) {
+    const sql = `
+        UPDATE users
+        SET is_member = TRUE
+        WHERE email = $1
+    `;
+
+    try {
+        await pool.query(sql, [email]);
+    } catch (error) {
+        throw error;
+    }
+}
+
 module.exports = {
     createUser,
 };
