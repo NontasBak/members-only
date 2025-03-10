@@ -3,16 +3,23 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Secret club</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <h1>Hello!</h1>
         <% if(user) { %>
-            <h2>Welcome, <%= user.first_name %> <%= user.last_name %></h2>
-            <% if(!user.is_member) { %>
-                <h3>Would you like to become a member?</h3>
-                <a href="update-membership">Update membership</a>
-            <% } %> 
-        <% } %>
+        <h2>Welcome, <%= user.first_name %> <%= user.last_name %></h2>
+        <% if(!user.is_member) { %>
+        <h3>Would you like to become a member?</h3>
+        <a href="update-membership">Update membership</a>
+        <% } %> <% } %>
     </body>
 </html>

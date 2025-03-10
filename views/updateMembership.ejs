@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Please submit the secret password to get full access into the club</h1>
-    <form action="/update-membership" method="POST">
-        <div class="input-container">
-            <label for="clubPassword">Club Password:</label>
-            <input type="password" name="clubPassword" id="clubPassword" />
-        </div>
-        <button type="submit">Submit</button>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Secret club</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <h1>
+            Please submit the secret password to get full access into the club
+        </h1>
+        <form action="/update-membership" method="POST">
+            <div class="input-container">
+                <label for="clubPassword">Club Password:</label>
+                <input type="password" name="clubPassword" id="clubPassword" />
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
 </html>
