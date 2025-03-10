@@ -4,6 +4,7 @@ const signupRouter = require("./routes/signupRouter");
 const updateMembershipRouter = require("./routes/updateMembershipRouter");
 const loginRouter = require("./routes/loginRouter");
 const newMessageRouter = require("./routes/newMessageRouter");
+const logoutRouter = require("./routes/logoutRouter");
 const session = require("express-session");
 const passport = require("passport");
 const { addUserIntoLocals } = require("./middleware/user");
@@ -31,6 +32,7 @@ app.use("/", indexRouter);
 app.use("/signup", signupRouter);
 app.use("/update-membership", updateMembershipRouter);
 app.use("/login", loginRouter);
+app.use("/logout", logoutRouter);
 app.use("/new-message", newMessageRouter);
 
 app.listen(3000, () => {

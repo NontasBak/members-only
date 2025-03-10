@@ -1,4 +1,6 @@
 const pool = require("./pool");
+const db = require("./queries");
+const bcrypt = require("bcryptjs");
 
 async function createTables() {
     const sql = `
@@ -27,9 +29,29 @@ async function createTables() {
     }
 }
 
+async function addSampleUsers() {
+    let hashedPassword = await bcrypt.hash("12345678", 10);
+    await db.createUser(
+        "Alice",
+        "Smith",
+        "alicesmith@gmail.com",
+        hashedPassword
+    );
+    hashedPassword = await bcrypt.hash("87654321", 10);
+    await db.createUser("Bob", "Jones", "bobjones@gmail.com", hashedPassword);
+    await db.createNewMessage(
+        1,
+        "Hello there!",
+        "Sup, what an amazing club!!!"
+    );
+    await db.createNewMessage(2, "Hi", "Hi, there!");
+}
+
 async function main() {
     try {
         await createTables();
+        await addSampleUsers();
+        console.log("Database created successfully");
     } catch (error) {
         console.log(error);
     }

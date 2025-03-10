@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Secret club</title>
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="index.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -14,12 +14,32 @@
         />
     </head>
     <body>
-        <h1>Hello!</h1>
-        <% if(user) { %>
-        <h2>Welcome, <%= user.first_name %> <%= user.last_name %></h2>
-        <% if(!user.is_member) { %>
-        <h3>Would you like to become a member?</h3>
-        <a href="update-membership">Update membership</a>
-        <% } %> <% } %>
+        <header>
+            <% if(!user) { %>
+            <div class="not-logged-in-container">
+                <h1>Hello!</h1>
+                <div class="login-container">
+                    <h3>You're not logged in.</h3>
+                    <a href="/login">Login</a>
+                </div>
+            </div>
+            <% } else {%>
+            <div class="logged-in-container">
+                <h1>Welcome back, <%= user.first_name %> <%= user.last_name %>!</h2>
+                <% if(!user.is_member) { %>
+                <div class="update-membership-container">
+                    <h3>Become a member now:</h3>
+                    <a href="update-membership">Update membership</a>
+                </div>
+            </div>
+            <% } %> <% } %>
+        </header>
+        <nav>
+            <% if(user) { %>
+            <form action="/logout" method="POST">
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+            <% } %>
+        </nav>
     </body>
 </html>
