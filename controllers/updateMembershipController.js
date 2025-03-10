@@ -39,8 +39,8 @@ const updateMembership = [
                 return res.status(401).redirect("/login");
             }
 
-            const userEmail = req.user.email;
-            await db.updateUserMembership(userEmail);
+            const userId = req.user.id;
+            await db.updateUserMembership(userId);
             res.redirect("/");
         } catch (error) {
             console.error(error);

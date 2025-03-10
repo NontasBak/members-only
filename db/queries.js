@@ -13,15 +13,28 @@ async function createUser(firstName, lastName, email, password) {
     }
 }
 
-async function updateUserMembership(email) {
+async function updateUserMembership(userId) {
     const sql = `
         UPDATE users
         SET is_member = TRUE
-        WHERE email = $1
+        WHERE id = $1
     `;
 
     try {
-        await pool.query(sql, [email]);
+        await pool.query(sql, [userId]);
+    } catch (error) {
+        throw error;
+    }
+}
+
+async function createNewMessage(userId, title, text) {
+    const sql = `
+        INSERT INTO messages (user_id, title, text, date)
+        VALUES ($1, $2, $3, CURRENT_TIMESTAMP)
+    `;
+
+    try {
+        await pool.query(sql, [userId, title, text]);
     } catch (error) {
         throw error;
     }
@@ -30,4 +43,5 @@ async function updateUserMembership(email) {
 module.exports = {
     createUser,
     updateUserMembership,
+    createNewMessage,
 };

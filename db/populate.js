@@ -16,7 +16,7 @@ async function createTables() {
             user_id INTEGER REFERENCES users ( id ),
             title VARCHAR(255),
             text TEXT,
-            date DATE
+            date TIMESTAMP
         );
     `;
 
