@@ -29,4 +29,5 @@ async function updateUserMembership(email) {
 
 module.exports = {
     createUser,
+    updateUserMembership,
 };

@@ -1,5 +1,6 @@
 const { body, validationResult } = require("express-validator");
 require("dotenv").config();
+const db = require("../db/queries");
 
 async function getUpdateMembership(req, res) {
     res.render("updateMembership");
@@ -34,7 +35,13 @@ const updateMembership = [
             }
 
             // Get the user's email from the session
-            // TODO
+            if (!req.user) {
+                return res.status(401).redirect("/login");
+            }
+
+            const userEmail = req.user.email;
+            await db.updateUserMembership(userEmail);
+            res.redirect("/");
         } catch (error) {
             console.error(error);
             next(error);
