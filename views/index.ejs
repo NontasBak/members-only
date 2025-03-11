@@ -39,9 +39,10 @@
         </div>
         <nav>
             <% if(user) { %>
-            <form action="/logout" method="POST">
-                <button type="submit" class="logout-button">Logout</button>
+            <form action="/logout" method="POST" class="logout-button">
+                <button type="submit">Logout</button>
             </form>
+            <a href="/new-message" class="new-message">New Message</a>
             <% } %>
         </nav>
     </body>

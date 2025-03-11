@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    gap: 2rem;
+}
+
+body > h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.new-message-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+input, textarea {
+    padding: 0.3rem 0.5rem;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"], .cancel {
+    padding: 0.5rem 1rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: fit-content;
+    align-self: center;
+    font-size: 1.1rem;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.cancel {
+    background-color: #dc3545;
+    text-decoration: none;
+}
+
+.cancel:hover {
+    background-color: #bd2130;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
