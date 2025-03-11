@@ -14,26 +14,29 @@
         />
     </head>
     <body>
-        <header>
-            <% if(!user) { %>
-            <div class="not-logged-in-container">
-                <h1>Hello!</h1>
-                <div class="login-container">
-                    <h3>You're not logged in.</h3>
-                    <a href="/login">Login</a>
+        <div class="main-container">
+            <header>
+                <% if(!user) { %>
+                <div class="not-logged-in-container">
+                    <h1>Hello!</h1>
+                    <div class="login-container">
+                        <h3>You're not logged in.</h3>
+                        <a href="/login">Login</a>
+                    </div>
                 </div>
-            </div>
-            <% } else {%>
-            <div class="logged-in-container">
-                <h1>Welcome back, <%= user.first_name %> <%= user.last_name %>!</h2>
-                <% if(!user.is_member) { %>
-                <div class="update-membership-container">
-                    <h3>Become a member now:</h3>
-                    <a href="update-membership">Update membership</a>
+                <% } else {%>
+                <div class="logged-in-container">
+                    <h1>Welcome back, <%= user.first_name %> <%= user.last_name %>!</h2>
+                    <% if(!user.is_member) { %>
+                    <div class="update-membership-container">
+                        <h3>Become a member now:</h3>
+                        <a href="update-membership">Update membership</a>
+                    </div>
                 </div>
-            </div>
-            <% } %> <% } %>
-        </header>
+                <% } %> <% } %>
+            </header>
+            <%- include('messages', {messages: messages}) %>
+        </div>
         <nav>
             <% if(user) { %>
             <form action="/logout" method="POST">

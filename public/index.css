@@ -12,7 +12,7 @@ body {
     align-items: center;
 }
 
-header {
+.main-container {
     margin: 0 auto;
 }
 
@@ -66,6 +66,47 @@ nav {
 .logout-button:hover {
     background-color: rgb(255, 205, 205);
     cursor: pointer;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.3rem 3rem;
+    border-left: 2px solid rgb(113, 113, 113);
+    margin-top: 2rem;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.message .author {
+    font-size: 1.1rem;
+    color: rgb(61, 66, 167);
+}
+
+.message .title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.message .date {
+    font-size: 0.9rem;
+    align-self: end;
+    color: rgb(104, 104, 104);
+}
+
+.message hr {
+    border: 1px solid black;
+    width: calc(100% + 3rem);
+    transform: translateX(-1.5rem);
+}
+
+.message:last-child hr {
+    display: none;
 }
 
 @media (max-width: 600px) {
