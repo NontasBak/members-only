@@ -53,7 +53,7 @@ const createUser = [
             const { firstName, lastName, email, password } = req.body;
             const hashedPassword = await bcrypt.hash(password, 10);
             await db.createUser(firstName, lastName, email, hashedPassword);
-            res.redirect("/");
+            res.redirect("/login");
         } catch (error) {
             console.error(error);
             next(error);

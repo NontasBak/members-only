@@ -6,6 +6,7 @@
         <title>Secret club</title>
         <link rel="stylesheet" href="reset.css" />
         <link rel="stylesheet" href="newMessage.css" />
+        <link rel="stylesheet" href="errors.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -15,6 +16,7 @@
     </head>
     <body>
         <h1>New message</h1>
+        <% if (locals.errors && errors.length > 0) { %> <%- include("errors", { errors: errors }) %> <% } %>
         <form action="/new-message" method="POST" class="new-message-form">
             <div class="input-container">
                 <label for="title">Title:</label>

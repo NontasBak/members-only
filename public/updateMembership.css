@@ -2,20 +2,20 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2rem;
     gap: 2rem;
+    margin: 2rem 1rem;
 }
 
 body > h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
 }
 
-.new-message-form {
+form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .input-container {
@@ -24,23 +24,24 @@ body > h1 {
     gap: 0.7rem;
 }
 
-input, textarea {
+input {
     padding: 0.3rem 0.5rem;
-    width: 100%;
+    width: 16rem;
 }
 
-textarea {
-    resize: vertical;
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-button[type="submit"], .cancel {
+button[type="submit"],
+.cancel {
     padding: 0.5rem 1rem;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: fit-content;
-    align-self: center;
     font-size: 1.1rem;
     transition: background-color 0.2s;
 }
@@ -59,11 +60,19 @@ button[type="submit"]:hover {
 }
 
 .cancel:hover {
-    background-color: #bd2130;
+    background-color: #a71d2a;
 }
 
-.button-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.no-account-container {
+    font-size: 1.1rem;
 }
+
+.no-account-container > p {
+    color: #565656;
+}
+
+.signup {
+    color: black;
+}
+
+

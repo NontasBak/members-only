@@ -2,7 +2,7 @@ const { body, validationResult } = require("express-validator");
 const passport = require("passport");
 
 async function getLogin(req, res) {
-    res.render("login");
+    res.render("login", { errors: req.flash("error") });
 }
 
 validateLoginForm = [

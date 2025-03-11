@@ -6,6 +6,7 @@ const loginRouter = require("./routes/loginRouter");
 const newMessageRouter = require("./routes/newMessageRouter");
 const logoutRouter = require("./routes/logoutRouter");
 const session = require("express-session");
+const flash = require("connect-flash");
 const passport = require("passport");
 const { addUserIntoLocals } = require("./middleware/user");
 require("dotenv").config();
@@ -26,6 +27,7 @@ app.use(
 );
 require("./middleware/passport");
 app.use(passport.session());
+app.use(flash());
 app.use(addUserIntoLocals);
 
 app.use("/", indexRouter);
